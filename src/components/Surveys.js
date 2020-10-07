@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Button, ListGroup, Col, Row, Table} from 'react-bootstrap'
+import { Button, ListGroup, Col, Row, Table, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import { Bearer } from './data/DB'
 import SendModal from './SendModal'
+import { FcAdvertising, FcCancel } from "react-icons/fc";
+
 export default class Surveys extends Component {
    state = {
       items: []
@@ -45,14 +47,35 @@ export default class Surveys extends Component {
 
             <Table striped bordered hover>
                <thead>
-                  <th>Kysely</th>
+                  <th>Kyselyn nimi</th>
                   <th>Lähetä</th>
+                  <th>Toiminnot</th>
                </thead>
             <tbody>
            {this.state.items.map((survey) =>
            <tr key={survey.SurveyId}>
            <td >{survey.SurveyTitle}</td>
-           <td><SendModal onClick={() => startSend(survey.SurveyId)} size="sm">Lähetä</SendModal></td>
+           <td>
+              <SendModal onClick={() => startSend(survey.SurveyId)} size="sm">Lähetä</SendModal>
+            </td>
+            <td>
+
+      <Button
+        variant="light"
+        className="d-inline-flex align-items-center"
+      >
+        <FcAdvertising />
+
+      </Button>
+      <Button
+        variant="light"
+        className="d-inline-flex align-items-center"
+      >
+      <FcCancel/>
+
+      </Button>
+
+            </td>
            </tr>
            )}
          </tbody>

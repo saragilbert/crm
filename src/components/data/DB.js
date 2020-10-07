@@ -6,8 +6,7 @@ export const customerDB = [
       "email": "sara.gilbert@webropol.com",
       "phone": "+358401705072",
       "organization": "Webropol Oy",
-      "gender": "female",
-      "img": "sssdsdv"
+      "gender": "female"
    },
    {
       "firstName": "Markus",
@@ -15,7 +14,8 @@ export const customerDB = [
       "id": "777788",
       "email": "markus.mokko@webropol.com",
       "phone": "+358401705072",
-      "organization": "Webropol Oy"
+      "organization": "Webropol Oy",
+      "gender": "male"
    },
    {
       "firstName": "Tarja",
@@ -23,7 +23,8 @@ export const customerDB = [
       "id": "88998377",
       "email": "tarja.sarvi@webropol.com",
       "phone": "+358401705072",
-      "organization": "Webropol Oy"
+      "organization": "Webropol Oy",
+      "gender": "female"
    },
    {
       "firstName": "Lauri",
@@ -31,7 +32,43 @@ export const customerDB = [
       "id": "335332",
       "email": "lauri.laakso@webropol.com",
       "phone": "+358401705072",
-      "organization": "Laurin Firma"
-   },
+      "organization": "Laurin Firma",
+      "gender": "male"
+   }
  ];
-export const Bearer = "Bearer ys3P5aVNMDPanaBsO4lRxzIGpZw2E2xtpQ0pJ6FfuN005_HxiXi7KGWElHkBkbQWLWq_EKTkr__psY4f5cDh676W5cTWi9EZhQBImynrTebH-witH9s32zM1cuiHcnLppNkXGmrhcp3Nl4v8uOQfhFIPUG8Zie9kNaJh7JT8EToXLDLJhNTYYuB7J-klo0-r0c0_zZE29ONO9kTKEaSO8hQluCQxtBlxHVaqM1q9jVJmxuQ0waSRd2D3X3hUetWNqGiJ0ZhZk1RREvkk3RpWQOQhD5TIfaTKgm_B3kFYThwWN2Dv1eecZWVvuH8g3RTdbCkOhMqyAhxgt-hb4nNx16Nrsq_aXs-o0WJRbMah_Gc"
+export const Bearer = "Bearer 7vuDrV1DAt7ZOZmrDwVdhN-nIJorr0kC0gxMUD2suZsuPO8nUlr9wPsB8Mps6Qy1iOimz-L7Fwj_7ObuvbyMLmrWXF2TVJrjesYfRqwyFbaWOrd3YVuTZSNNgI_M8jBwu3YtDJ4PZLp05gjDSCH0klCnoLWOBABGeXSUphOTOsrFIUbbYfk6FVSguWeDxj2VwJc16JMDnNB90w8H5LOyws7Et0ogF_IuLm2Ra7BIF36DYT71jPbb9IfZ0wM7pPlPKIHYSaFLfNi6Yzbjf1tXb89VRq1YAgKYYCFuIfkqg5_yU4vh8PcE2V2z8ZBiww_MTphzXRj-54yD8xfwMHkqFh_tU4QBPe4VIg_TBcu0J44"
+
+export const Recipients =
+   {
+      "Recipients": [
+        {
+          "Email": "sara.gilbert@webropol.com",
+          "PhoneNumber": "+358401705972",
+          "FirstName": "Sara",
+          "LastName": "Gilbert",
+          "RecipientGroupId": "00000000-0000-0000-0000-000000000000"
+        },
+            {
+          "Email": "markus.mokko@webropol.com",
+          "PhoneNumber": "+358504307835",
+          "FirstName": "Markus",
+          "LastName": "Mokko",
+          "RecipientGroupId": "00000000-0000-0000-0000-000000000000"
+        }
+
+   ]
+}
+
+export const sendEmailBody = {
+   "Filter":"SendToAll",
+   "EmailBody":"Hello I am API!",
+   "EmailSubject":"APIAPIAPII",
+   "TemplateId":"8040f47b-fef7-4870-a25b-6e2eb01865b8",
+   "RecipientGroupId":"00000000-0000-0000-0000-000000000000"
+}
+
+export const sendSmsBody = {
+   "Message": "Jos sait tän nii mun apinappi toimii! Hurra!",
+   "Filter": "SendToAll",
+   "NumberOfReminders": 1
+ }

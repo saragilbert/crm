@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Customers from './components/Customers'
 import Surveys from './components/Surveys'
 import './styles/App.css'
+import Token from './components/Token'
 import { Container, Nav, Navbar, Form, FormControl, Button } from 'react-bootstrap'
 
 
@@ -24,7 +25,7 @@ const App = () => {
     <Nav className="mr-auto">
   <Nav.Link href="#customers">Asiakkaat</Nav.Link>
   <Nav.Link href="#surveys">Kyselyt</Nav.Link>
-  <Nav.Link href="#pricing">Plop</Nav.Link>
+  <Nav.Link onClick={Token}>Token</Nav.Link>
 </Nav>
 <Form inline>
   <FormControl type="text" placeholder="Search" className="mr-sm-2" />

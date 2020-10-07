@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
 import { Card, Button, Row, Table} from 'react-bootstrap'
 import { customerDB } from './data/DB'
 
@@ -11,12 +11,13 @@ export default class Customers extends Component {
 
 
    render() {
+
       return(
-         <div>
+         <div className="customers">
             <Row>
                   {customerDB.map((customer) =>
                   <Card style={{ width: '30rem' }}>
-                     <Card.Img variant="top" src='https://avatars.dicebear.com/api/{customer.gender}/{customer.img}.svg'/>
+                     <Card.Img variant="top" src={'https://avatars.dicebear.com/api/'+customer.gender+'/'+customer.firstName+'.svg'}/>
                      <Card.Body>
                         <Card.Title>{customer.name}</Card.Title>
                         <Card.Text>
