@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Card, Button, Row, Table} from 'react-bootstrap'
+import { customerDB } from './data/DB'
 
 export default class Customers extends Component {
    state = {
       items:[]
     }
 
-   componentDidMount(){
-      var config = {
-         method: 'get',
-         url: 'https://jsonplaceholder.typicode.com/users',
-      }
-      axios(config)
-         .then(res => {
-            this.setState({ items: res.data })
-         })
-   }
+
 
    render() {
       return(
          <div>
             <Row>
-                  {this.state.items.map((customer) =>
+                  {customerDB.map((customer) =>
                   <Card style={{ width: '30rem' }}>
-                     <Card.Img variant="top" src="https://tinyfac.es/data/avatars/E0B4CAB3-F491-4322-BEF2-208B46748D4A-200w.jpeg" />
+                     <Card.Img variant="top" src='https://avatars.dicebear.com/api/{customer.gender}/{customer.img}.svg'/>
                      <Card.Body>
                         <Card.Title>{customer.name}</Card.Title>
                         <Card.Text>
@@ -51,7 +43,7 @@ export default class Customers extends Component {
                                        organisaatio:
                                     </td>
                                     <td>
-                                       {customer.company.name}
+                                       {customer.organization}
                                     </td>
                                  </tr>
                                  <tr></tr>

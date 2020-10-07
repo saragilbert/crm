@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Button, ListGroup, Col, Row, Table} from 'react-bootstrap'
+import { Bearer } from './data/DB'
+import SendModal from './SendModal'
 export default class Surveys extends Component {
    state = {
-      items:[]
-    }
+      items: []
+   }
 
    componentDidMount(){
       var config = {
          method: 'get',
          url: 'https://staging-rest.webropol.com/api/v1/surveys',
          headers: {
-            'Authorization': 'Bearer 2X54QwviDtOGdCm3jnYDNGulR0QZBzG70-kaBN-2EWk7sO3jkAdXctigcYth28LKgitJdI0mIpHLmpZu8MWyte06pqgQjAvz6zS30WgDWMo2f6P615q_t3Gw3cGIpSNwKeUuPL9Gt-0ScZb3Z9EAzlMAkQuXMvL2FRZkVMcDXqiMYMAL62E3OGJiNhu7_isoTy5p9-uA72VkHqEel_oRZv7H3FK1LpyI0fBGH8UzaXFStu-GKZ-PyUUBUl2Yw_CtwEbU4W-deDeX5wxhFb9LCD5TgUf1WQFNKgiFSfIzUsuM_aE_97LfefT2UdcYYWQCA30YycMX7sGuTizmZJZb_lY5NK02uthMzLzgHnMV4y8'
+            'Authorization': Bearer
          }
       }
       axios(config)
@@ -22,8 +24,25 @@ export default class Surveys extends Component {
    }
 
    render() {
+      async function startSend (id){
+
+         console.log(id)
+         var url = 'https://staging-rest.webropol.com/api/v1/surveys/'+ id + '/getPublicLink/'
+         const response = await fetch(url, {
+            method: 'GET',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': Bearer
+            },
+            //body: JSON.stringify(data) // body data type must match "Content-Type" header
+          });
+          console.log(response)
+         ;
+      }
       return(
          <div>
+
             <Table striped bordered hover>
                <thead>
                   <th>Kysely</th>
@@ -31,9 +50,9 @@ export default class Surveys extends Component {
                </thead>
             <tbody>
            {this.state.items.map((survey) =>
-           <tr>
-           <td key={survey.id}>{survey.SurveyTitle}</td>
-           <td><Button size="sm">Lähetä</Button></td>
+           <tr key={survey.SurveyId}>
+           <td >{survey.SurveyTitle}</td>
+           <td><SendModal onClick={() => startSend(survey.SurveyId)} size="sm">Lähetä</SendModal></td>
            </tr>
            )}
          </tbody>
