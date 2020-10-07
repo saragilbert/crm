@@ -11,7 +11,7 @@ export default class Surveys extends Component {
          method: 'get',
          url: 'https://staging-rest.webropol.com/api/v1/surveys',
          headers: {
-            'Authorization': 'Bearer e_WBVb_lrmwTOsuJcQJFmrWxilgxrZPIeamazVKyTjd3EM_0xd7a-n9uJj-cGlr95pXGP6BNmF-duGdndj6ifpw6HktCsRuCXmOrclZW9ROtJpKhFWAZ4xntc0NzTv6i1mM5XN1paeCQog_ZKU-A2Z95fP2xzwg_9QRuT1mrHly2ew7Qwr3RfNQIRzeRtbOdruYG7WrvEPTe2-6MGOoNZCHK6QhQDURHzAKaWMhrz3DpYkBPTG5-_NKweZA_X2WyhPyqkSkFLNWNNJ1xLyqEys4fAH3aTMpOsSyTh0h-jXbMV19HGJCsxuEUGG5UjPiGCWXY-DWboHbWpqT_nPEZyBb3U7y9w3TIiiMPHJfEm_s'
+            'Authorization': 'Bearer 2X54QwviDtOGdCm3jnYDNGulR0QZBzG70-kaBN-2EWk7sO3jkAdXctigcYth28LKgitJdI0mIpHLmpZu8MWyte06pqgQjAvz6zS30WgDWMo2f6P615q_t3Gw3cGIpSNwKeUuPL9Gt-0ScZb3Z9EAzlMAkQuXMvL2FRZkVMcDXqiMYMAL62E3OGJiNhu7_isoTy5p9-uA72VkHqEel_oRZv7H3FK1LpyI0fBGH8UzaXFStu-GKZ-PyUUBUl2Yw_CtwEbU4W-deDeX5wxhFb9LCD5TgUf1WQFNKgiFSfIzUsuM_aE_97LfefT2UdcYYWQCA30YycMX7sGuTizmZJZb_lY5NK02uthMzLzgHnMV4y8'
          }
       }
       axios(config)
