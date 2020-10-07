@@ -96,7 +96,7 @@ function SendModal() {
          </Modal.Header>
          <Modal.Body>
             <Alert variant="info">
-               Olet lähettämässä kyselyä valitsemillesi henkilöille.
+               Olet lähettämässä  kyselyä valitsemillesi henkilöille.
             </Alert>
             <BootstrapTable
             keyField="id"
